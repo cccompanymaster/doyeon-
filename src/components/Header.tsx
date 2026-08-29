@@ -105,7 +105,7 @@ export default function Header() {
 
         {/* 데스크톱 메뉴 */}
         <nav aria-label="주요 메뉴" className="hidden md:block">
-          <ul className="flex items-center gap-9">
+          <ul className="flex items-center gap-6 lg:gap-8">
             {navItems.map((item) => (
               <li key={item.id}>
                 <a

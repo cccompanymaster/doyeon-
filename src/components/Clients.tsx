@@ -12,10 +12,10 @@ export default function Clients() {
   return (
     <section aria-labelledby="clients-heading" className="bg-ink pb-20 pt-4 sm:pb-28">
       <div className="shell">
-        <SectionHeading
-          eyebrow="Our Clients"
-          aside={<span id="clients-heading">병원 현장에 맞춘 상담 교육을 진행합니다</span>}
-        />
+        <SectionHeading eyebrow="Our Clients" aside="병원 현장에 맞춘 상담 교육을 진행합니다" />
+        <h2 id="clients-heading" className="sr-only">
+          주요 교육 대상 분야
+        </h2>
       </div>
 
       <div

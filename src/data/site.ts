@@ -45,6 +45,7 @@ export const brand = {
 export const navItems = [
   { id: 'about', label: 'ABOUT' },
   { id: 'program', label: 'PROGRAM' },
+  { id: 'process', label: 'PROCESS' },
   { id: 'review', label: 'REVIEW' },
   { id: 'news', label: 'NEWS' },
   { id: 'contact', label: 'CONTACT' },
@@ -117,7 +118,7 @@ export const about = {
 export const vision = {
   eyebrow: 'OUR VISION',
   image: '/images/vision.jpg',
-  imageAlt: '강의장에서 상담실장들과 마주 선 윤도연 대표',
+  imageAlt: '수천 명 규모의 세일즈 컨벤션 현장',
   lines: [
     '말을 잘하는 실장이 아니라,',
     '상담을 성과로 연결하는',
@@ -125,6 +126,68 @@ export const vision = {
   accentLine: '프로 상담실장.',
   body:
     '배우고 끝나는 교육이 아니라 배운 것을 현장에 적용하고, 피드백받으며 내 상담으로 만드는 과정. 개인의 감각에 의존하는 상담이 아니라, 반복해서 성과를 만들어내는 나만의 상담 시스템. 유담프로세일즈아카데미는 상담실장의 실력이 곧 자신의 가치가 되는 순간까지 함께합니다.',
+};
+
+/* ─────────────── 5-2. WHY (문제 제기 · 교육 방식) ─────────────── */
+// 원고의 “실제 상담에서 반복되는 문제”와 “이런 교육이 아닙니다” 대목을 정리한 섹션입니다.
+export const why = {
+  eyebrow: 'Why Yudam',
+  headline: '혹시, 이런 고민을',
+  headlineAccent: '반복하고 계신가요?',
+  // 상담 현장에서 반복되는 질문
+  questions: [
+    {
+      no: 'Q1',
+      text: '설명은 잘했는데\n왜 계약으로 연결되지 않았을까?',
+      caption: '상담은 길었는데 결과가 남지 않는 경우',
+    },
+    {
+      no: 'Q2',
+      text: '왜 고객은 항상\n가장 낮은 금액만 선택할까?',
+      caption: '가격이 가치보다 먼저 전달되는 경우',
+    },
+    {
+      no: 'Q3',
+      text: '어떻게 자연스럽게\n더 높은 프로그램을 제안해야 할까?',
+      caption: '객단가 확장에서 매번 막히는 경우',
+    },
+  ],
+  compareTitle: 'Our Method',
+  // 왼쪽: 하지 않는 것 / 오른쪽: 실제로 하는 것
+  notDoing: {
+    label: '이런 교육이 아닙니다',
+    items: [
+      '상담 멘트를 통째로 외우게 하는 교육',
+      '이론만 배우고 끝나는 일회성 강의',
+      '누구에게나 똑같이 진행되는 일률적 커리큘럼',
+      '“이 말을 이렇게 바꿔보세요”로 끝나는 화법 교정',
+    ],
+  },
+  doing: {
+    label: '이렇게 합니다',
+    items: [
+      '현장에서 고객을 만나고 매출을 만드는 상담 실력',
+      '배운 것을 다음 상담에 바로 적용하고 피드백',
+      '현재 성과와 고객 특성을 진단한 뒤 필요한 부분을 집중 설계',
+      '상담 흐름 전체를 분석해 반복돼온 습관까지 교정',
+    ],
+  },
+};
+
+/* ─────────────── 5-3. PROCESS (교육 진행 방식) ─────────────── */
+export const process = {
+  eyebrow: 'How It Works',
+  headline: '이 과정을 반복하며',
+  headlineAccent: '나만의 상담 시스템을 완성합니다.',
+  body:
+    '한 번 배우고 끝나는 교육으로는 오랫동안 반복해온 상담 습관이 바뀌지 않습니다. 배우고, 현장에 적용하고, 실제 상담을 분석받고, 다시 적용하는 과정을 반복합니다.',
+  steps: [
+    { no: '01', title: '교육', desc: '상담 프로세스와 고객심리를 체계적으로 학습합니다.' },
+    { no: '02', title: '현장 적용', desc: '배운 내용을 그 주 실제 고객 상담에 바로 적용합니다.' },
+    { no: '03', title: '상담 분석', desc: '실제 상담 녹음파일을 회차별로 세밀하게 분석합니다.' },
+    { no: '04', title: '1:1 피드백', desc: '놓친 구매 신호와 개인별 문제점을 찾아 교정합니다.' },
+    { no: '05', title: '재적용', desc: '교정한 방식으로 다시 상담하며 내 것으로 만듭니다.' },
+  ],
 };
 
 /* ─────────────── 6. PROGRAM (교육 과정) ─────────────── */
@@ -237,6 +300,17 @@ export const programs: Program[] = [
   },
 ];
 
+/* ─────────────── 6-2. 과정 한눈에 비교 ─────────────── */
+export const programCompare = {
+  columns: ['과정', '핵심', '상담 녹음 피드백', '1:1 코칭', '주요 대상'],
+  rows: [
+    ['01 BASIC', '상담 시스템 구축 · 매출 기본기', '주 최대 2개', '—', '신입 · 초보 상담실장'],
+    ['02 ADVANCED', '고객심리 · 고가상담 · 문제 교정', '주 최대 3개', '개인별 1:1 병행', '경력 상담실장'],
+    ['03 PREMIUM', '진단 기반 맞춤 세일즈 설계', '개인 상황에 맞춰 진행', '전 과정 1:1', '고단가 상담 · 세일즈 리더'],
+    ['04 HOSPITAL', '병원 전체의 상담 기준 수립', '요청 시 사례 분석', '단체 교육 중심', '병원 · 상담팀 단위'],
+  ],
+};
+
 /* ─────────────── 7. 교육 대상 분야 (무한 슬라이더) ─────────────── */
 // 협업 병원 로고가 준비되면 이 배열 대신 로고 이미지 배열로 교체하면 됩니다.
 export const clientFields = [
@@ -265,14 +339,14 @@ export type GalleryItem = {
 };
 
 export const gallery: GalleryItem[] = [
-  { src: '/images/gallery-01.jpg', category: 'LECTURE', title: '상담실장 실전 코칭', alt: '상담실장들과 소그룹으로 실전 코칭을 진행하는 모습' },
-  { src: '/images/gallery-02.jpg', category: 'LECTURE', title: '성공적인 상담의 핵심', alt: '‘성공적인 상담의 핵심’ 강의 후 수강생과 대화하는 모습' },
-  { src: '/images/gallery-03.jpg', category: 'WORKSHOP', title: '교육 후 개별 피드백', alt: '교육 종료 후 수강생에게 개별 피드백을 전달하는 모습' },
-  { src: '/images/gallery-04.jpg', category: 'LECTURE', title: '병원 상담 세일즈 특강', alt: '마이크를 들고 병원 상담 세일즈 특강을 진행하는 모습' },
-  { src: '/images/gallery-09.jpg', category: 'TRAINING', title: '뷰티센터 마스터 코스', alt: '뷰티센터에서 마스터 코스 실습 교육을 진행하는 모습' },
-  { src: '/images/gallery-11.jpg', category: 'CONFERENCE', title: '세일즈 컨퍼런스 현장', alt: '세일즈 컨퍼런스 행사장에 참석한 윤도연 대표' },
-  { src: '/images/gallery-06.jpg', category: 'AWARD', title: '연간 시상식 무대', alt: '연간 세일즈 시상식 무대에 오른 모습' },
-  { src: '/images/gallery-10.jpg', category: 'AWARD', title: '차량 인정식', alt: '세일즈 성과로 받은 인정 차량과 함께 촬영한 기념 사진' },
+  { src: '/images/gallery-01.jpg', category: 'LECTURE', title: '뷰티센터 정규 강의', alt: '대형 강의장에서 수십 명의 수강생을 대상으로 강의를 진행하는 모습' },
+  { src: '/images/gallery-02.jpg', category: 'LECTURE', title: '리더 대상 세일즈 교육', alt: '리더 직급자를 대상으로 세일즈 교육을 진행하는 강의 현장' },
+  { src: '/images/gallery-03.jpg', category: 'WORKSHOP', title: '소그룹 실전 클래스', alt: '소그룹으로 둘러앉아 실습 중심의 클래스를 진행하는 모습' },
+  { src: '/images/gallery-04.jpg', category: 'SEMINAR', title: '게스트 이벤트 강연', alt: '게스트 이벤트 무대에서 마이크를 들고 강연하는 모습' },
+  { src: '/images/gallery-05.jpg', category: 'AWARD', title: '커리어 카 프로모션', alt: '커리어 카 프로모션 시상 무대에서 소감을 전하는 모습' },
+  { src: '/images/gallery-06.jpg', category: 'AWARD', title: '커리어 카 수여', alt: '세일즈 성과로 받은 커리어 카와 함께 촬영한 기념 사진' },
+  { src: '/images/gallery-07.jpg', category: 'CONFERENCE', title: '연간 세일즈 컨퍼런스', alt: '연간 세일즈 컨퍼런스 행사장에 참석한 모습' },
+  { src: '/images/gallery-08.jpg', category: 'TRAINING', title: '메이크업 마스터 코스', alt: '뷰티센터에서 메이크업 마스터 코스 실습 교육을 진행하는 모습' },
 ];
 
 /* ─────────────── 9. 수강생 후기 (가로 슬라이드) ─────────────── */
@@ -394,7 +468,7 @@ export const news: NewsItem[] = [
 export const contact = {
   eyebrow: 'CONTACT',
   image: '/images/cta.jpg',
-  imageAlt: '교육 종료 후 수강생과 개별 상담을 진행하는 윤도연 대표',
+  imageAlt: '세일즈 시상식이 열리는 무대 전경',
   headline: ['어떤 부분이', '가장 고민되시나요?'],
   body: '현재의 고민과 목표를 남겨주시면 내용을 확인한 후\n가장 적합한 교육과정을 안내해드립니다.',
   buttonLabel: '교육 문의하기',

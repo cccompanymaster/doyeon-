@@ -2,6 +2,8 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Vision from '@/components/Vision';
+import Why from '@/components/Why';
+import Process from '@/components/Process';
 import Clients from '@/components/Clients';
 import Programs from '@/components/Programs';
 import Gallery from '@/components/Gallery';
@@ -28,8 +30,10 @@ export default function Home() {
         <Hero />
         <About />
         <Vision />
+        <Why />
         <Clients />
         <Programs />
+        <Process />
         <Gallery />
         <Reviews />
         <News />

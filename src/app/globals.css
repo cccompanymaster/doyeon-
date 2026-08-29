@@ -22,6 +22,9 @@
   body {
     @apply bg-ink text-white antialiased;
     font-family: var(--pretendard);
+    /* 한글이 단어 중간에서 끊기지 않도록 (영문·URL 은 아래 규칙으로 보완) */
+    word-break: keep-all;
+    overflow-wrap: break-word;
     /* 가로 스크롤 방지 */
     overflow-x: hidden;
   }

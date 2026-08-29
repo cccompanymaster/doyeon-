@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { brand, programs } from '@/data/site';
+import { brand, programCompare, programs } from '@/data/site';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
 
@@ -58,7 +58,7 @@ export default function Programs() {
                       </p>
                     </div>
                     <span
-                      className="shrink-0 font-display text-2xl leading-none text-white/60 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white"
+                      className="shrink-0 text-2xl leading-none text-white/60 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white"
                       aria-hidden="true"
                     >
                       →
@@ -69,6 +69,47 @@ export default function Programs() {
             </Reveal>
           ))}
         </ul>
+
+        {/* 과정 한눈에 비교 — 좁은 화면에서는 가로 스크롤 */}
+        <Reveal delay={0.1} className="mt-14 sm:mt-16">
+          <p className="eyebrow mb-5">At a glance</p>
+          <div className="overflow-x-auto border border-line">
+            <table className="w-full min-w-[720px] border-collapse text-left">
+              <caption className="sr-only">교육 과정별 핵심 내용 비교표</caption>
+              <thead>
+                <tr className="border-b border-line">
+                  {programCompare.columns.map((c) => (
+                    <th
+                      key={c}
+                      scope="col"
+                      className="whitespace-nowrap px-5 py-4 font-display text-[11px] uppercase tracking-[0.18em] text-white/45"
+                    >
+                      {c}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {programCompare.rows.map((row) => (
+                  <tr key={row[0]} className="border-b border-line last:border-0">
+                    {row.map((cell, ci) => (
+                      <td
+                        key={ci}
+                        className={
+                          ci === 0
+                            ? 'whitespace-nowrap px-5 py-4 font-display text-sm uppercase tracking-[0.1em] text-accent'
+                            : 'px-5 py-4 text-sm leading-relaxed text-white/70'
+                        }
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Reveal>
       </div>
 
       {/* 과정별 상세 */}

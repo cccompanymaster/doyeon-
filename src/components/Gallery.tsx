@@ -10,10 +10,10 @@ export default function Gallery() {
       className="bg-surface2 py-24 sm:py-32 lg:py-40"
     >
       <div className="shell">
-        <SectionHeading
-          eyebrow="Activity & Lecture"
-          aside={<span id="gallery-heading">강의 · 교육 · 활동 현장</span>}
-        />
+        <SectionHeading eyebrow="Activity & Lecture" aside="강의 · 교육 · 활동 현장" />
+        <h2 id="gallery-heading" className="sr-only">
+          강의 · 교육 · 활동 현장
+        </h2>
 
         {/* 2열 이미지 갤러리 — 비율 고정으로 CLS 방지 */}
         <ul className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-5">

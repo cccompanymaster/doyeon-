@@ -51,7 +51,7 @@ export default function Hero() {
           Hospital Consulting Sales Education
         </motion.p>
 
-        <h1 className="display-title text-[clamp(2.4rem,10.5vw,7.5rem)] font-semibold">
+        <h1 className="display-title text-[clamp(2.05rem,9.4vw,7.5rem)] font-semibold">
           {hero.lines.map((l, i) => (
             <motion.span key={l.text} {...line(i + 1)} className="block">
               <span className={l.accent ? 'text-accent' : 'text-white'}>{l.text}</span>
