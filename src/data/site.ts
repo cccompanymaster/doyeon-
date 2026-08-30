@@ -17,7 +17,9 @@ export const brand = {
   description:
     '병원 상담을 ‘감’이 아닌 ‘실력’으로 만드는 병원 상담실장 전문 세일즈 교육 아카데미입니다.',
 
-  // 실제 도메인이 정해지면 여기를 바꿔주세요 (SEO / Open Graph 에 사용)
+  // 최종 폴백 주소. 배포 후에는 Vercel 환경변수 NEXT_PUBLIC_SITE_URL 이
+  // 우선 적용되고, 그것도 없으면 Vercel 배포 주소가 자동으로 쓰입니다.
+  // (src/lib/site-url.ts 참고)
   siteUrl: 'https://yudam-sales.co.kr',
 
   // 🔗 상담 신청 링크 — 카카오톡 채널 주소로 교체하세요

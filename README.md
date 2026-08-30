@@ -140,6 +140,7 @@ src/
 │  ├─ FloatingCta.tsx   고정 카카오톡 상담 버튼
 │  ├─ Reveal.tsx        스크롤 등장 애니메이션 공통 래퍼
 │  └─ SectionHeading.tsx
+├─ lib/site-url.ts      배포 주소 결정 (SEO · OG 썸네일)
 └─ data/site.ts         ⭐ 모든 콘텐츠
 ```
 
@@ -155,12 +156,49 @@ src/
 
 ---
 
-## 9. 배포 전 체크리스트
+## 9. 배포 (Vercel)
+
+Next.js 를 만든 회사의 서비스라 별도 설정 없이 그대로 올라갑니다.
+
+### 최초 배포
+
+1. https://vercel.com 접속 → **Continue with GitHub** 으로 로그인
+2. **Add New… → Project** → `cccompanymaster/doyeon-` 선택 → **Import**
+3. 설정 화면은 **전부 기본값 그대로** 두고 **Deploy**
+   (Framework Preset 이 `Next.js` 로 잡혀 있는지만 확인)
+4. 2~3분 뒤 `○○○.vercel.app` 주소가 발급됩니다
+
+빌드 명령·출력 경로·Node 버전을 따로 입력할 필요가 없습니다.
+이후 이 브랜치에 푸시할 때마다 자동으로 다시 배포됩니다.
+
+### 실제 도메인 연결
+
+1. Vercel 프로젝트 → **Settings → Domains** → 도메인 입력
+2. 안내에 따라 도메인 등록업체(가비아 등)에서 DNS 레코드 추가
+3. **Settings → Environment Variables** 에서 아래 값을 추가하고 재배포
+
+   | Key | Value |
+   | --- | --- |
+   | `NEXT_PUBLIC_SITE_URL` | `https://실제도메인.co.kr` |
+
+### 사이트 주소가 정해지는 순서
+
+`src/lib/site-url.ts` 가 아래 순서로 주소를 찾습니다.
+카카오톡·인스타그램에 링크를 공유할 때 뜨는 썸네일이 이 주소를 사용하므로,
+도메인 연결 전에도 썸네일이 깨지지 않습니다.
+
+1. `NEXT_PUBLIC_SITE_URL` 환경변수 — 도메인 연결 후
+2. Vercel 이 부여한 배포 주소 — 도메인 연결 전 자동
+3. `src/data/site.ts` 의 `brand.siteUrl` — 로컬 개발용 폴백
+
+---
+
+## 10. 배포 전 체크리스트
 
 - [ ] `brand.contactUrl` 을 실제 카카오톡 채널 주소로 교체
 - [ ] `brand.social` 의 블로그 / 인스타그램 / 유튜브 주소 입력
-- [ ] `brand.siteUrl` 을 실제 도메인으로 교체 (SEO·OG 이미지 경로에 사용)
+- [ ] 도메인 연결 후 Vercel 환경변수 `NEXT_PUBLIC_SITE_URL` 설정 (9번 참고)
 - [ ] `brand.company` 의 주소 · 사업자등록번호 · 연락처 · 이메일 입력
 - [ ] `reviews` 를 실제 수강생 후기로 교체
 - [ ] `src/app/privacy/page.tsx` 개인정보처리방침 내용 검토
-- [ ] `public/` 에 `favicon.ico` 추가
+- [ ] 탭 아이콘 확인 (`src/app/icon.svg` — 필요 시 교체)

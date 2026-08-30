@@ -1,10 +1,10 @@
 import type { MetadataRoute } from 'next';
-import { brand } from '@/data/site';
+import { getSiteUrl } from '@/lib/site-url';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: brand.siteUrl,
+      url: getSiteUrl(),
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,

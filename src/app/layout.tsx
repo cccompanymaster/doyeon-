@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Oswald } from 'next/font/google';
 import { brand } from '@/data/site';
+import { getSiteUrl } from '@/lib/site-url';
 import './globals.css';
 
 // 영문 제목용 — 폭이 좁고 강한 서체
@@ -11,10 +12,11 @@ const display = Oswald({
   display: 'swap',
 });
 
+const siteUrl = getSiteUrl();
 const title = `${brand.name} | ${brand.slogan}`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(brand.siteUrl),
+  metadataBase: new URL(siteUrl),
   title: {
     default: title,
     template: `%s | ${brand.name}`,
@@ -39,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: brand.siteUrl,
+    url: siteUrl,
     siteName: brand.name,
     title,
     description: brand.description,
@@ -77,7 +79,7 @@ const jsonLd = {
   '@type': 'EducationalOrganization',
   name: brand.name,
   alternateName: brand.nameEn,
-  url: brand.siteUrl,
+  url: siteUrl,
   description: brand.description,
   slogan: brand.slogan,
   founder: { '@type': 'Person', name: brand.representative },

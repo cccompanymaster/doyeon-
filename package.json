@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "유담프로세일즈아카데미 | 병원 상담실장 세일즈 교육 - 원페이지 브랜드 홈페이지",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
