@@ -42,6 +42,7 @@ Node.js 20 이상을 권장합니다.
 | 과정 비교표 | `programCompare` | 열 이름과 행을 배열로 수정 |
 | 교육 대상 분야 (슬라이더) | `clientFields` | |
 | 활동 갤러리 | `gallery` | |
+| 방송 · 협업 | `media` | 세로 사진은 `position` 으로 잘리는 초점 위치 조정 |
 | **수강생 후기** | `reviews` | 아래 3번 참고 |
 | 뉴스 카드 | `news` | |
 | 문의 섹션 문구 | `contact` | |
@@ -133,6 +134,7 @@ src/
 │  ├─ Programs.tsx     교육 과정 인덱스 카드 + 비교표 + 과정별 상세
 │  ├─ Process.tsx      교육 진행 5단계 사이클
 │  ├─ Gallery.tsx       활동 · 강의 현장 2열 갤러리
+│  ├─ Media.tsx         방송 · 매거진 · 협업 이미지
 │  ├─ Reviews.tsx       수강생 후기 가로 슬라이드
 │  ├─ News.tsx          출간 · 미디어 소식
 │  ├─ Contact.tsx       상담 CTA
@@ -195,10 +197,11 @@ Next.js 를 만든 회사의 서비스라 별도 설정 없이 그대로 올라�
 
 ## 10. 배포 전 체크리스트
 
-- [ ] `brand.contactUrl` 을 실제 카카오톡 채널 주소로 교체
+- [x] `brand.contactUrl` 카카오톡 채널 (`pf.kakao.com/_yxnxliX`)
 - [ ] `brand.social` 의 블로그 / 인스타그램 / 유튜브 주소 입력
 - [ ] 도메인 연결 후 Vercel 환경변수 `NEXT_PUBLIC_SITE_URL` 설정 (9번 참고)
-- [ ] `brand.company` 의 주소 · 사업자등록번호 · 연락처 · 이메일 입력
+- [x] 교육 문의 전화 (070-8064-4610)
+- [ ] `brand.company` 의 주소 · 사업자등록번호 · 이메일 입력
 - [ ] `reviews` 를 실제 수강생 후기로 교체
 - [ ] `src/app/privacy/page.tsx` 개인정보처리방침 내용 검토
 - [ ] 탭 아이콘 확인 (`src/app/icon.svg` — 필요 시 교체)

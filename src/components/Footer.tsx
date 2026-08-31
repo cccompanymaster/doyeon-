@@ -33,10 +33,13 @@ export default function Footer() {
         {/* 상단: 브랜드 + 바로가기 */}
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div>
-            <p className="font-display text-2xl uppercase leading-none tracking-[0.14em] text-white sm:text-3xl">
+            <p className="font-display text-3xl uppercase leading-none tracking-[0.14em] text-white sm:text-4xl">
               {brand.shortEn}
             </p>
-            <p className="mt-3 text-sm text-white/55">{brand.name}</p>
+            <p className="mt-2.5 font-display text-sm font-medium uppercase leading-none tracking-[0.2em] text-white/80 sm:text-base sm:tracking-[0.24em]">
+              Pro Sales Academy
+            </p>
+            <p className="mt-4 text-sm text-white/55">{brand.name}</p>
             <p className="mt-1.5 text-sm text-white/40">{brand.slogan}</p>
           </div>
 

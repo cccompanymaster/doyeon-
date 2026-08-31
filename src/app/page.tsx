@@ -7,6 +7,7 @@ import Process from '@/components/Process';
 import Clients from '@/components/Clients';
 import Programs from '@/components/Programs';
 import Gallery from '@/components/Gallery';
+import Media from '@/components/Media';
 import Reviews from '@/components/Reviews';
 import News from '@/components/News';
 import Contact from '@/components/Contact';
@@ -35,6 +36,7 @@ export default function Home() {
         <Programs />
         <Process />
         <Gallery />
+        <Media />
         <Reviews />
         <News />
         <Contact />

@@ -22,14 +22,23 @@ export default function Vision() {
       </div>
 
       <div className="shell relative z-10 text-center">
-        {/* 브랜드 심벌 */}
+        {/* 브랜드 심벌 — YUDAM 과 PRO SALES ACADEMY 를 하나의 로고처럼 함께 노출 */}
         <Reveal>
-          <div className="mx-auto flex flex-col items-center">
-            <span className="font-display text-[clamp(3rem,13vw,9rem)] font-semibold uppercase leading-[0.85] tracking-[0.04em] text-white">
+          <div className="mx-auto flex max-w-3xl flex-col items-center">
+            <span className="font-display text-[clamp(2.9rem,12vw,8rem)] font-semibold uppercase leading-[0.85] tracking-[0.04em] text-white">
               {brand.shortEn}
             </span>
-            <span className="mt-4 font-display text-[10px] uppercase tracking-[0.42em] text-accent sm:text-xs">
-              Pro Sales Academy
+
+            <span className="mt-5 flex w-full items-center gap-4 sm:mt-6 sm:gap-6">
+              <span className="h-px flex-1 bg-white/25" aria-hidden="true" />
+              <span className="font-display text-[clamp(0.95rem,3.4vw,2.05rem)] font-semibold uppercase leading-none tracking-[0.18em] text-white sm:tracking-[0.22em]">
+                Pro Sales Academy
+              </span>
+              <span className="h-px flex-1 bg-white/25" aria-hidden="true" />
+            </span>
+
+            <span className="mt-4 text-sm font-medium tracking-wide text-accent sm:text-base">
+              {brand.name}
             </span>
           </div>
         </Reveal>
@@ -50,7 +59,7 @@ export default function Vision() {
         </Reveal>
 
         <Reveal delay={0.24}>
-          <p className="mx-auto mt-10 max-w-2xl text-[15px] leading-[2] text-white/65 sm:text-base">
+          <p className="mx-auto mt-10 max-w-3xl text-base leading-[1.95] text-white/80 sm:text-lg sm:leading-[2]">
             {vision.body}
           </p>
         </Reveal>

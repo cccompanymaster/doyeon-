@@ -92,14 +92,16 @@ export default function Header() {
         <a
           href="#top"
           onClick={(e) => goTo(e, 'top')}
-          className="group flex items-baseline gap-2"
+          className="group flex items-center"
           aria-label={`${brand.name} 홈으로 이동`}
         >
-          <span className="font-display text-xl uppercase leading-none tracking-[0.14em] text-white sm:text-[22px]">
-            {brand.shortEn}
-          </span>
-          <span className="hidden text-[10px] uppercase tracking-[0.28em] text-white/50 sm:inline">
-            Pro Sales Academy
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-[19px] uppercase leading-none tracking-[0.14em] text-white sm:text-[22px]">
+              {brand.shortEn}
+            </span>
+            <span className="mt-[3px] font-display text-[9.5px] font-medium uppercase leading-none tracking-[0.19em] text-white/80 sm:mt-1 sm:text-[11px] sm:tracking-[0.22em]">
+              Pro Sales Academy
+            </span>
           </span>
         </a>
 

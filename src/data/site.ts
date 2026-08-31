@@ -22,8 +22,8 @@ export const brand = {
   // (src/lib/site-url.ts 참고)
   siteUrl: 'https://yudam-sales.co.kr',
 
-  // 🔗 상담 신청 링크 — 카카오톡 채널 주소로 교체하세요
-  contactUrl: 'https://pf.kakao.com/',
+  // 🔗 상담 신청 링크 — 카카오톡 채널
+  contactUrl: 'https://pf.kakao.com/_yxnxliX',
 
   // 🔗 하단 바로가기 링크 — 개설 후 주소를 넣어주세요
   social: {
@@ -39,7 +39,7 @@ export const brand = {
     address: '서울특별시 ○○구 ○○로 00, 0층',
     businessNumber: '000-00-00000',
     email: 'contact@yudam-sales.co.kr',
-    phone: '010-0000-0000',
+    phone: '070-8064-4610',
   },
 };
 
@@ -78,7 +78,7 @@ export const about = {
   headlineAccent: '윤도연입니다.',
   role: '유담프로세일즈아카데미 대표 · 《끌어당기는 세일즈》 저자',
   paragraphs: [
-    '저는 단순히 세일즈 이론을 가르치는 강사가 아닙니다. 직접 고객을 만나고, 판매하고, 조직을 만들고, 사람을 교육하며 현장에서 성과를 만들어온 세일즈 전문가입니다.',
+    '저는 단순히 세일즈 이론을 가르치는 강사가 아닙니다. 2010년부터 16년간 직접 고객을 만나고, 판매하고, 조직을 만들고, 사람을 교육하며 현장에서 성과를 만들어온 세일즈 전문가입니다.',
     '메리케이 코리아에서 약 8년간 활동하며 팀빌딩 전국 1위와 연매출 3억 원을 달성했고, 전국 7개 뷰티센터에서 강의를 진행하며 서울 뷰티센터 대표강사로 리더 직급자 멘토 교육을 맡았습니다.',
     '이후 그 성과를 인정받아 성형외과·피부과 총괄실장으로 스카우트되어 직접 고객을 상담하고 매출을 만들며 억대 연봉의 총괄실장으로 근무했습니다. 그 과정에서 병원 상담 세일즈의 본질과 시스템을 깊이 경험했습니다.',
     '병원 상담의 성과는 마지막 클로징 한마디에서 만들어지지 않습니다. 고객의 마음을 읽는 질문, 신뢰를 만드는 상담의 흐름, 가격보다 먼저 전달되는 가치, 망설임을 결정으로 연결하는 클로징. 이 모든 과정이 바뀌어야 결과가 달라집니다.',
@@ -109,7 +109,7 @@ export const about = {
   ],
   // 상단 숫자 지표
   stats: [
-    { value: '8', unit: 'YEARS', label: '현장 세일즈 · 교육 경력' },
+    { value: '16', unit: 'YEARS', label: '현장 세일즈 · 교육 경력 (2010~)' },
     { value: '1', unit: 'ST', label: '메리케이 팀빌딩 전국 1위' },
     { value: '7', unit: 'CENTERS', label: '전국 뷰티센터 강의' },
     { value: '15', unit: '억+', label: '온라인 사업 연매출' },
@@ -411,6 +411,68 @@ export const reviews: Review[] = [
     result: '조직 성과 개선',
   },
 ];
+
+/* ─────────────── 9-2. MEDIA (방송 · 매거진 · 협업) ─────────────── */
+export type MediaItem = {
+  src: string;
+  alt: string;
+  title: string;
+  category: string;
+  year?: string;
+  /** 4:3 으로 잘릴 때 보여줄 초점 위치 (세로 사진에서 인물이 잘리지 않게) */
+  position?: string;
+};
+
+export const media = {
+  eyebrow: 'Media & Collaboration',
+  headline: '방송과 미디어에서',
+  headlineAccent: '다이어트 · 세일즈 전문가로.',
+  body:
+    '다수의 방송과 매거진에 다이어트 전문가로 소개되었고, 온라인 위탁판매를 진행하며 전 리듬체조 국가대표 신수지 선수와 함께 다이어트 제품 홍보를 진행했습니다.',
+  items: [
+    {
+      src: '/images/media-01.jpg',
+      category: 'BROADCAST',
+      title: '노블레스TV 출연',
+      alt: '노블레스TV 스튜디오에서 진행자와 인터뷰하는 윤도연 대표',
+    },
+    {
+      src: '/images/media-02.jpg',
+      category: 'BROADCAST',
+      title: '방송 촬영 현장',
+      alt: '카메라 앞에서 다이어트 제품 관련 방송 촬영을 진행하는 모습',
+      position: 'center 55%',
+    },
+    {
+      src: '/images/media-03.jpg',
+      category: 'COLLABORATION',
+      title: '신수지 선수와 제품 홍보',
+      alt: '전 리듬체조 국가대표 신수지 선수와 함께 다이어트 제품을 들고 촬영한 사진',
+      year: '2018–2019',
+      position: 'center 20%',
+    },
+    {
+      src: '/images/media-04.jpg',
+      category: 'COLLABORATION',
+      title: '제품 홍보 촬영',
+      alt: '다이어트 제품 홍보 콘텐츠를 촬영하는 현장',
+      year: '2018–2019',
+    },
+    {
+      src: '/images/media-05.jpg',
+      category: 'MAGAZINE',
+      title: '매거진 인터뷰',
+      alt: '매거진에 실린 뷰티 · 세일즈 전문가 인터뷰 지면',
+      position: 'center top',
+    },
+    {
+      src: '/images/media-06.jpg',
+      category: 'BROADCAST',
+      title: '촬영 세팅 현장',
+      alt: '방송 촬영을 위해 카메라와 조명을 세팅한 현장',
+    },
+  ] as MediaItem[],
+};
 
 /* ─────────────── 10. NEWS ─────────────── */
 export type NewsItem = {
