@@ -14,7 +14,7 @@ import News from '@/components/News';
 import Contact from '@/components/Contact';
 import { statements } from '@/data/site';
 import Footer from '@/components/Footer';
-import FloatingCta from '@/components/FloatingCta';
+import FloatingActions from '@/components/FloatingActions';
 
 export default function Home() {
   return (
@@ -48,7 +48,7 @@ export default function Home() {
       </main>
 
       <Footer />
-      <FloatingCta />
+      <FloatingActions />
     </>
   );
 }

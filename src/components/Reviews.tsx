@@ -95,13 +95,13 @@ export default function Reviews() {
         >
           {reviews.map((r) => (
             <li
-              key={`${r.name}-${r.headline}`}
+              key={r.headline}
               className="flex w-[86vw] shrink-0 snap-start flex-col justify-between border border-white/12 bg-surface p-7 transition-colors duration-500 hover:border-accent sm:w-[420px] sm:p-9"
             >
               <div>
                 <div className="flex items-center justify-between gap-4">
                   <span className="font-display text-[10px] uppercase tracking-[0.2em] text-accent">
-                    {r.course}
+                    {r.field}
                   </span>
                   {r.result ? (
                     <span className="border border-accent/50 px-2.5 py-1 text-[11px] leading-none text-accent">
