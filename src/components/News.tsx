@@ -49,7 +49,7 @@ export default function News() {
                   <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-white/60">
                     {item.excerpt}
                   </p>
-                  <p className="mt-auto pt-6 font-display text-xs uppercase tracking-[0.18em] text-white/40">
+                  <p className="mt-auto pt-6 font-display text-xs uppercase tracking-[0.18em] text-white/60">
                     {item.date}
                   </p>
                 </div>

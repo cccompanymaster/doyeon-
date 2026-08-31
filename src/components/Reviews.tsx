@@ -127,7 +127,7 @@ export default function Reviews() {
                 </span>
                 <span className="text-sm">
                   <span className="font-semibold text-white">{r.name}</span>
-                  <span className="ml-2 text-white/45">{r.role}</span>
+                  <span className="ml-2 text-white/60">{r.role}</span>
                 </span>
               </footer>
             </li>
@@ -135,7 +135,7 @@ export default function Reviews() {
         </ul>
       </div>
 
-      <p className="shell mt-6 text-xs text-white/35">
+      <p className="shell mt-6 text-xs text-white/55">
         * 후기는 수강생 동의를 받아 게재하였으며, 개인정보 보호를 위해 성함 일부를 비공개 처리했습니다.
       </p>
     </section>

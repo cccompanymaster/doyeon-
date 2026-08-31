@@ -150,17 +150,7 @@ src/
 
 ---
 
-## 8. 접근성 · 성능
-
-- 시맨틱 HTML(`header` / `main` / `section` / `article` / `figure`)과 모든 이미지 `alt` 적용
-- 키보드만으로 메뉴·버튼·후기 슬라이드 조작 가능, “본문 바로가기” 링크 제공
-- `prefers-reduced-motion` 설정 시 애니메이션 자동 해제
-- 360px~1440px 전 구간에서 가로 스크롤이 발생하지 않도록 검증
-- 히어로 이미지만 우선 로딩, 나머지는 지연 로딩
-
----
-
-## 9. 배포 (Vercel)
+## 8. 배포 (Vercel)
 
 Next.js 를 만든 회사의 서비스라 별도 설정 없이 그대로 올라갑니다.
 
@@ -181,9 +171,13 @@ Next.js 를 만든 회사의 서비스라 별도 설정 없이 그대로 올라�
 2. 안내에 따라 도메인 등록업체(가비아 등)에서 DNS 레코드 추가
 3. **Settings → Environment Variables** 에서 아래 값을 추가하고 재배포
 
-   | Key | Value |
-   | --- | --- |
-   | `NEXT_PUBLIC_SITE_URL` | `https://실제도메인.co.kr` |
+   | Key | Value | 용도 |
+   | --- | --- | --- |
+   | `NEXT_PUBLIC_SITE_URL` | `https://실제도메인.co.kr` | SEO · 공유 썸네일 주소 |
+   | `NEXT_PUBLIC_NAVER_VERIFICATION` | 네이버에서 발급받은 코드 | 네이버 서치어드바이저 |
+   | `NEXT_PUBLIC_GOOGLE_VERIFICATION` | 구글에서 발급받은 코드 | 구글 서치콘솔 |
+
+   설정할 키 목록은 `.env.example` 에 정리해 두었습니다.
 
 ### 사이트 주소가 정해지는 순서
 
@@ -197,13 +191,74 @@ Next.js 를 만든 회사의 서비스라 별도 설정 없이 그대로 올라�
 
 ---
 
-## 10. 배포 전 체크리스트
+## 9. 보안 · 성능
+
+### 적용된 보안 설정
+
+`next.config.mjs` 에서 모든 응답에 아래 헤더를 붙입니다.
+
+| 헤더 | 역할 |
+| --- | --- |
+| `Content-Security-Policy` | 외부 스크립트 주입, 외부로의 폼 전송, 객체 삽입 차단 |
+| `X-Frame-Options: DENY` | 다른 사이트가 iframe 으로 감싸는 클릭재킹 차단 |
+| `X-Content-Type-Options` | 브라우저의 MIME 타입 임의 추측 차단 |
+| `Referrer-Policy` | 외부 이동 시 전체 주소 대신 도메인만 전달 |
+| `Permissions-Policy` | 카메라·마이크·위치 등 미사용 기능 차단 |
+| `Strict-Transport-Security` | https 접속 강제 (도메인 연결 후 적용) |
+
+그 외
+- 서버 정보를 노출하는 `X-Powered-By` 헤더 제거
+- 외부 링크 전체에 `rel="noopener noreferrer"` 적용
+- `npm audit` 취약점 0건 (`postcss` 는 패치 버전으로 강제 고정)
+- 저장소에 키·비밀번호 없음, `.env` 계열은 커밋 대상에서 제외
+
+> **문의 폼을 추가하실 때** — 현재 CSP 의 `script-src` 에는 `'unsafe-inline'` 이
+> 들어 있습니다. 입력을 받는 곳이 없어 지금은 문제가 없지만, 사용자 입력을
+> 받는 폼을 만들게 되면 미들웨어 nonce 방식으로 바꾸는 것을 권장합니다.
+
+### 성능 측정값 (모바일 390px 기준)
+
+| 항목 | 값 | 기준 |
+| --- | --- | --- |
+| LCP (가장 큰 요소 표시) | 약 2.0초 | 2.5초 이하 양호 |
+| CLS (화면 밀림) | 0 | 0.1 이하 양호 |
+| FCP (첫 화면 표시) | 약 0.5초 | |
+
+- 이미지는 AVIF 로 자동 변환되어 첫 화면 기준 약 30KB 만 전송됩니다
+- 모든 이미지에 영역 크기가 지정되어 있어 레이아웃 밀림이 없습니다
+- 웹폰트는 `@import` 대신 `<link>` 로 병렬 로드합니다
+
+### 접근성
+
+- 본문 텍스트 전체가 WCAG AA 대비 기준(4.5:1)을 통과합니다
+- 시맨틱 HTML(`header` / `main` / `section` / `article` / `figure`)과 모든 이미지 `alt` 적용
+- 키보드만으로 메뉴·버튼·과정 탭·후기 슬라이드 조작 가능, “본문 바로가기” 링크 제공
+- 교육 과정은 표준 탭 패턴(방향키·Home·End 이동)으로 구현했습니다
+- 모션 최소화(`prefers-reduced-motion`) 설정 시 애니메이션이 자동으로 꺼집니다
+- 360px~1440px 전 구간에서 가로 스크롤이 발생하지 않습니다
+
+---
+
+## 10. 자동 검사 (GitHub Actions)
+
+`.github/workflows/ci.yml` 이 푸시할 때마다 아래를 자동 실행합니다.
+
+- 타입 검사 → 린트 → 빌드 → 취약점 검사
+
+하나라도 실패하면 GitHub 에 빨간 표시가 뜨므로, 깨진 코드가 배포로
+넘어가기 전에 알 수 있습니다.
+
+---
+
+## 11. 배포 전 체크리스트
 
 - [x] `brand.contactUrl` 카카오톡 채널 (`pf.kakao.com/_yxnxliX`)
 - [ ] `brand.social` 의 블로그 / 인스타그램 / 유튜브 주소 입력
-- [ ] 도메인 연결 후 Vercel 환경변수 `NEXT_PUBLIC_SITE_URL` 설정 (9번 참고)
+- [ ] 도메인 연결 후 Vercel 환경변수 `NEXT_PUBLIC_SITE_URL` 설정 (8번 참고)
 - [x] 교육 문의 전화 (070-8064-4610)
 - [ ] `brand.company` 의 주소 · 사업자등록번호 · 이메일 입력
 - [ ] `reviews` 를 실제 수강생 후기로 교체
 - [ ] `src/app/privacy/page.tsx` 개인정보처리방침 내용 검토
 - [ ] 탭 아이콘 확인 (`src/app/icon.svg` — 필요 시 교체)
+- [ ] 네이버 서치어드바이저 · 구글 서치콘솔 등록 후 인증코드 입력
+- [ ] 카카오톡에 링크를 한 번 보내 썸네일이 뜨는지 확인

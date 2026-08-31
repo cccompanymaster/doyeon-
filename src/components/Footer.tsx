@@ -40,7 +40,7 @@ export default function Footer() {
               Pro Sales Academy
             </p>
             <p className="mt-4 text-sm text-white/55">{brand.name}</p>
-            <p className="mt-1.5 text-sm text-white/40">{brand.slogan}</p>
+            <p className="mt-1.5 text-sm text-white/60">{brand.slogan}</p>
           </div>
 
           {/* 🔗 SNS 바로가기 — src/data/site.ts 의 brand.social 에서 주소를 수정하세요 */}
@@ -91,25 +91,25 @@ export default function Footer() {
 
         {/* 사업자 정보 */}
         <div className="mt-10 border-t border-line pt-8">
-          <dl className="flex flex-wrap gap-x-6 gap-y-2 text-xs leading-relaxed text-white/45 sm:text-[13px]">
+          <dl className="flex flex-wrap gap-x-6 gap-y-2 text-xs leading-relaxed text-white/60 sm:text-[13px]">
             <div className="flex gap-2">
-              <dt className="text-white/30">상호</dt>
+              <dt className="text-white/55">상호</dt>
               <dd>{brand.company.companyName}</dd>
             </div>
             <div className="flex gap-2">
-              <dt className="text-white/30">대표</dt>
+              <dt className="text-white/55">대표</dt>
               <dd>{brand.company.ceo}</dd>
             </div>
             <div className="flex gap-2">
-              <dt className="text-white/30">사업자등록번호</dt>
+              <dt className="text-white/55">사업자등록번호</dt>
               <dd>{brand.company.businessNumber}</dd>
             </div>
             <div className="flex gap-2">
-              <dt className="text-white/30">주소</dt>
+              <dt className="text-white/55">주소</dt>
               <dd>{brand.company.address}</dd>
             </div>
             <div className="flex gap-2">
-              <dt className="text-white/30">문의</dt>
+              <dt className="text-white/55">문의</dt>
               <dd>
                 <a href={`tel:${brand.company.phone.replace(/-/g, '')}`} className="hover:text-white">
                   {brand.company.phone}
@@ -123,12 +123,12 @@ export default function Footer() {
           </dl>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs text-white/30">
+            <p className="text-xs text-white/55">
               © {new Date().getFullYear()} {brand.name}. All rights reserved.
             </p>
             <a
               href="/privacy"
-              className="text-xs text-white/45 underline underline-offset-4 transition-colors hover:text-white"
+              className="text-xs text-white/60 underline underline-offset-4 transition-colors hover:text-white"
             >
               개인정보처리방침
             </a>

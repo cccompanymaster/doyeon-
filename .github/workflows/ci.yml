@@ -1,0 +1,44 @@
+# 푸시할 때마다 타입 검사 · 린트 · 빌드를 돌려
+# 깨진 코드가 배포로 넘어가는 것을 막습니다.
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+# 같은 브랜치에 연달아 푸시하면 이전 실행을 취소합니다.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: 의존성 설치
+        run: npm ci
+
+      - name: 타입 검사
+        run: npm run typecheck
+
+      - name: 린트
+        run: npm run lint
+
+      - name: 빌드
+        run: npm run build
+
+      - name: 알려진 취약점 검사
+        run: npm audit --audit-level=high

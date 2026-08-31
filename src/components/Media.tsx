@@ -51,7 +51,7 @@ export default function Media() {
                       {item.category}
                     </span>
                     {item.year ? (
-                      <span className="font-display text-[10px] tracking-[0.1em] text-white/45">
+                      <span className="font-display text-[10px] tracking-[0.1em] text-white/60">
                         {item.year}
                       </span>
                     ) : null}

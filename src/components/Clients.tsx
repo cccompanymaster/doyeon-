@@ -34,7 +34,7 @@ export default function Clients() {
             <li
               key={`${field}-${i}`}
               aria-hidden={i >= clientFields.length ? 'true' : undefined}
-              className="shrink-0 font-display text-2xl uppercase tracking-[0.12em] text-white/40 transition-colors duration-300 hover:text-white sm:text-4xl"
+              className="shrink-0 font-display text-2xl uppercase tracking-[0.12em] text-white/55 transition-colors duration-300 hover:text-white sm:text-4xl"
             >
               {field}
             </li>

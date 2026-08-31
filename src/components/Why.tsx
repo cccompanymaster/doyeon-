@@ -43,12 +43,12 @@ export default function Why() {
         <div className="grid gap-5 lg:grid-cols-2 lg:gap-6">
           <Reveal>
             <div className="h-full border border-white/12 p-7 sm:p-9">
-              <p className="text-sm font-semibold text-white/45">{why.notDoing.label}</p>
+              <p className="text-sm font-semibold text-white/60">{why.notDoing.label}</p>
               <ul className="mt-6 space-y-4">
                 {why.notDoing.items.map((t) => (
-                  <li key={t} className="flex gap-3.5 text-[15px] leading-relaxed text-white/45">
+                  <li key={t} className="flex gap-3.5 text-[15px] leading-relaxed text-white/60">
                     <span
-                      className="mt-[3px] shrink-0 font-display text-base leading-none text-white/30"
+                      className="mt-[3px] shrink-0 font-display text-base leading-none text-white/55"
                       aria-hidden="true"
                     >
                       ✕

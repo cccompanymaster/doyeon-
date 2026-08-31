@@ -63,7 +63,7 @@ export default function PrivacyPage() {
           ))}
         </div>
 
-        <p className="mt-14 border-t border-line pt-8 text-xs text-white/35">
+        <p className="mt-14 border-t border-line pt-8 text-xs text-white/55">
           본 방침은 게시일로부터 시행됩니다.
         </p>
       </div>

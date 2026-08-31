@@ -174,7 +174,7 @@ export default function Header() {
                     className="flex items-center justify-between py-4 font-display text-lg uppercase tracking-[0.18em] text-white/85"
                   >
                     {item.label}
-                    <span className="text-xs text-white/30">↗</span>
+                    <span className="text-xs text-white/55">↗</span>
                   </a>
                 </li>
               ))}

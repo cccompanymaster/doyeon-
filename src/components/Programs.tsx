@@ -248,7 +248,7 @@ export default function Programs() {
                     <th
                       key={c}
                       scope="col"
-                      className="whitespace-nowrap px-5 py-4 font-display text-[11px] uppercase tracking-[0.18em] text-white/45"
+                      className="whitespace-nowrap px-5 py-4 font-display text-[11px] uppercase tracking-[0.18em] text-white/60"
                     >
                       {c}
                     </th>

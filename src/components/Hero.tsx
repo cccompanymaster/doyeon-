@@ -92,7 +92,7 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
         aria-hidden="true"
       >
-        <span className="font-display text-[10px] uppercase tracking-[0.3em] text-white/45">Scroll</span>
+        <span className="font-display text-[10px] uppercase tracking-[0.3em] text-white/60">Scroll</span>
         <span className="h-10 w-px bg-gradient-to-b from-white/50 to-transparent" />
       </div>
     </section>

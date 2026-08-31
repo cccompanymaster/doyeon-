@@ -66,7 +66,7 @@ export default function About() {
                   {brand.representative}
                   <span className="ml-2 text-xs font-normal text-white/50">대표</span>
                 </span>
-                <span className="font-display text-[11px] uppercase tracking-[0.2em] text-white/40">
+                <span className="font-display text-[11px] uppercase tracking-[0.2em] text-white/60">
                   CEO
                 </span>
               </figcaption>

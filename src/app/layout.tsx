@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Oswald } from 'next/font/google';
-import { brand } from '@/data/site';
+import { brand, programs } from '@/data/site';
 import { getSiteUrl } from '@/lib/site-url';
 import './globals.css';
 
@@ -47,10 +47,10 @@ export const metadata: Metadata = {
     description: brand.description,
     images: [
       {
-        url: '/images/hero.jpg',
-        width: 1402,
-        height: 1122,
-        alt: `${brand.name} ${brand.representative} 대표 강의 현장`,
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: `${brand.name} — ${brand.slogan}`,
       },
     ],
   },
@@ -58,12 +58,21 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title,
     description: brand.description,
-    images: ['/images/hero.jpg'],
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
+  // 검색엔진 소유 확인 — 발급받은 코드를 Vercel 환경변수에 넣으면 자동 적용됩니다.
+  //   NEXT_PUBLIC_NAVER_VERIFICATION  (네이버 서치어드바이저)
+  //   NEXT_PUBLIC_GOOGLE_VERIFICATION (구글 서치콘솔)
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+    other: process.env.NEXT_PUBLIC_NAVER_VERIFICATION
+      ? { 'naver-site-verification': process.env.NEXT_PUBLIC_NAVER_VERIFICATION }
+      : {},
   },
 };
 
@@ -90,13 +99,33 @@ const jsonLd = {
   },
   email: brand.company.email,
   telephone: brand.company.phone,
+  // 제공 교육 과정 — 검색 결과에 과정 목록이 함께 노출될 수 있습니다.
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: '교육 과정',
+    itemListElement: programs.map((p) => ({
+      '@type': 'Course',
+      name: p.title,
+      description: p.summary,
+      provider: { '@type': 'Organization', name: brand.name, url: siteUrl },
+    })),
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={display.variable}>
       <head>
+        {/*
+          Pretendard 웹폰트.
+          globals.css 안에서 @import 로 부르면 CSS 를 받은 뒤에야 폰트 CSS 를 다시
+          요청해 대기 시간이 두 배가 되므로, head 에서 바로 병렬로 내려받습니다.
+        */}
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
       </head>
       <body>
         <script

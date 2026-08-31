@@ -16,7 +16,7 @@ export default function SectionHeading({ eyebrow, aside, className = '' }: Props
       <div className="hairline" aria-hidden="true" />
       <div className="flex flex-wrap items-baseline justify-between gap-3 pt-5">
         <p className="eyebrow">{eyebrow}</p>
-        {aside ? <div className="text-xs text-white/45 sm:text-sm">{aside}</div> : null}
+        {aside ? <div className="text-xs text-white/60 sm:text-sm">{aside}</div> : null}
       </div>
     </Reveal>
   );
