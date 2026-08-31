@@ -141,7 +141,7 @@ src/
 │  ├─ News.tsx          출간 · 미디어 소식
 │  ├─ Contact.tsx       상담 CTA
 │  ├─ Footer.tsx        사업자 정보 · SNS 바로가기
-│  ├─ FloatingActions.tsx 우측 고정 채널 아이콘 + 카카오톡 상담 버튼
+│  ├─ FloatingActions.tsx 우측 고정 채널 로고 아이콘 (블로그·인스타·유튜브·카카오)
 │  ├─ Reveal.tsx        스크롤 등장 애니메이션 공통 래퍼
 │  └─ SectionHeading.tsx
 ├─ lib/site-url.ts      배포 주소 결정 (SEO · OG 썸네일)
