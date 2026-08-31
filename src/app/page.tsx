@@ -8,9 +8,11 @@ import Clients from '@/components/Clients';
 import Programs from '@/components/Programs';
 import Gallery from '@/components/Gallery';
 import Media from '@/components/Media';
+import StatementBand from '@/components/StatementBand';
 import Reviews from '@/components/Reviews';
 import News from '@/components/News';
 import Contact from '@/components/Contact';
+import { statements } from '@/data/site';
 import Footer from '@/components/Footer';
 import FloatingCta from '@/components/FloatingCta';
 
@@ -29,14 +31,17 @@ export default function Home() {
 
       <main id="main">
         <Hero />
+        <StatementBand data={statements.goal} />
         <About />
         <Vision />
         <Why />
+        <StatementBand data={statements.skill} />
         <Clients />
         <Programs />
         <Process />
         <Gallery />
         <Media />
+        <StatementBand data={statements.result} />
         <Reviews />
         <News />
         <Contact />

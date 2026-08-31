@@ -38,6 +38,7 @@ Node.js 20 이상을 권장합니다.
 | 비전 문구 | `vision` | |
 | 문제 제기 · 교육 방식 | `why` | 반복되는 상담 고민 3가지 / “이런 교육이 아닙니다 ↔ 이렇게 합니다” |
 | 교육 진행 5단계 | `process` | 교육 → 현장 적용 → 상담 분석 → 1:1 피드백 → 재적용 |
+| 중간 문구 배너 | `statements` | 히어로 뒤 / WHY 뒤 / 후기 앞, 3곳에 들어가는 짧은 카피 |
 | 교육 과정 4개 | `programs` | 과정 추가/삭제 시 배열에 항목만 넣으면 화면이 자동 확장 |
 | 과정 비교표 | `programCompare` | 열 이름과 행을 배열로 수정 |
 | 교육 대상 분야 (슬라이더) | `clientFields` | |
@@ -131,7 +132,8 @@ src/
 │  ├─ Vision.tsx        OUR VISION
 │  ├─ Why.tsx          반복되는 상담 고민 + 교육 방식 대조
 │  ├─ Clients.tsx       무한 로고/분야 슬라이더
-│  ├─ Programs.tsx     교육 과정 인덱스 카드 + 비교표 + 과정별 상세
+│  ├─ Programs.tsx     과정 카드(탭) + 선택 시 상세 열림 + 비교표
+│  ├─ StatementBand.tsx 구간 전환 문구 배너
 │  ├─ Process.tsx      교육 진행 5단계 사이클
 │  ├─ Gallery.tsx       활동 · 강의 현장 2열 갤러리
 │  ├─ Media.tsx         방송 · 매거진 · 협업 이미지

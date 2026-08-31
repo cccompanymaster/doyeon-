@@ -192,6 +192,56 @@ export const process = {
   ],
 };
 
+/* ─────────────── 5-4. STATEMENT (구간 전환 배너) ─────────────── */
+// 페이지 중간에서 시선을 잡아주는 짧은 문구 배너입니다.
+export type Statement = {
+  eyebrow: string;
+  /** 줄 단위 헤드라인. accent: true 인 줄만 포인트 컬러로 표시됩니다. */
+  headline: { text: string; accent?: boolean }[];
+  /** 원형 키워드 (선택) */
+  chips?: string[];
+  /** 상승 지표 (선택) */
+  metrics?: { label: string; value: string }[];
+  /** 마무리 한 줄 */
+  footnote: string;
+};
+
+export const statements: Record<'goal' | 'skill' | 'result', Statement> = {
+  // 히어로 직후
+  goal: {
+    eyebrow: 'Your Goal',
+    headline: [
+      { text: '억대 연봉,', accent: true },
+      { text: '막연한 목표로 두지 마세요.' },
+    ],
+    footnote: '무엇을 바꿔야 하는지 알면, 목표는 계획이 됩니다.',
+  },
+  // WHY 섹션 다음
+  skill: {
+    eyebrow: 'What Decides It',
+    headline: [
+      { text: '상담실장의 연봉은' },
+      { text: '상담 실력에서 결정됩니다.', accent: true },
+    ],
+    chips: ['질문 순서', '설명 타이밍', '가격 제시', '클로징 방식'],
+    footnote: '작은 차이가 큰 결과를 만듭니다.',
+  },
+  // 후기 섹션 직전
+  result: {
+    eyebrow: 'What Changes',
+    headline: [
+      { text: '상담을 바꾸면' },
+      { text: '고객 반응이 달라집니다.', accent: true },
+    ],
+    metrics: [
+      { label: '계약률', value: 'UP' },
+      { label: '객단가', value: 'UP' },
+      { label: '재등록', value: 'UP' },
+    ],
+    footnote: '상담의 기술은 곧 매출의 기술입니다.',
+  },
+};
+
 /* ─────────────── 6. PROGRAM (교육 과정) ─────────────── */
 export type Program = {
   no: string;
