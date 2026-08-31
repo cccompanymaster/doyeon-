@@ -95,11 +95,12 @@ export default function Header() {
           className="group flex items-center"
           aria-label={`${brand.name} 홈으로 이동`}
         >
+          {/* 로고 — YUDAM 과 PRO SALES ACADEMY 가 함께 읽히도록 두 줄로 구성 */}
           <span className="flex flex-col leading-none">
-            <span className="font-display text-[19px] uppercase leading-none tracking-[0.14em] text-white sm:text-[22px]">
+            <span className="font-display text-[21px] uppercase leading-none tracking-[0.12em] text-white sm:text-[25px]">
               {brand.shortEn}
             </span>
-            <span className="mt-[3px] font-display text-[9.5px] font-medium uppercase leading-none tracking-[0.19em] text-white/80 sm:mt-1 sm:text-[11px] sm:tracking-[0.22em]">
+            <span className="mt-1 font-display text-[11px] font-semibold uppercase leading-none tracking-[0.16em] text-white sm:mt-1.5 sm:text-[13px] sm:tracking-[0.2em]">
               Pro Sales Academy
             </span>
           </span>

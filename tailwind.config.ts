@@ -51,10 +51,24 @@ const config: Config = {
           '0%': { transform: 'scale(1)' },
           '100%': { transform: 'scale(1.12)' },
         },
+        // 상담 버튼 주목 효과 — 링이 퍼지며 살짝 커집니다.
+        // 눈이 피로하지 않도록 2.4초 주기의 느린 맥박으로 설정했습니다.
+        // (WCAG 2.3.1: 초당 3회 이상 점멸 금지 — 초당 0.4회라 안전)
+        attention: {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 0 0 rgba(255, 59, 125, 0.55)',
+          },
+          '50%': {
+            transform: 'scale(1.035)',
+            boxShadow: '0 0 0 14px rgba(255, 59, 125, 0)',
+          },
+        },
       },
       animation: {
         marquee: 'marquee 38s linear infinite',
         slowZoom: 'slowZoom 18s ease-out forwards',
+        attention: 'attention 2.4s ease-in-out infinite',
       },
     },
   },

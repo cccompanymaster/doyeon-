@@ -46,7 +46,7 @@ export default function Contact() {
               href={brand.contactUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-accent w-full sm:w-auto"
+              className="btn-accent w-full animate-attention sm:w-auto"
             >
               {contact.buttonLabel}
               <span aria-hidden="true">↗</span>
